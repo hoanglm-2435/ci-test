@@ -4,13 +4,12 @@ default:
 stages:
 - Build
 - Test
+- Allow failure
 
 jobs:
 - name: Run tests
   stage: Build
   image: alpine
-  services:
-  - redis:alpine
   script:
   - echo Hello
 
@@ -20,37 +19,23 @@ jobs:
   script:
   - sleep 10
 
-- name: Wake up
-  stage: Build
-  image: alpine
-  workspace: none
-  script:
-  - echo Hello
-  when: manual
-
 - name: Sleep again
   stage: Build
   image: alpine
   script:
   - sleep 10
 
-- name: Sleep more
-  stage: Test
-  image: alpine
-  script:
-  - sleep 10
-
 - name: Say bye!
-  stage: Test
+  stage: Build
   image: alpine
   script:
   - sleep 10
   - echo Byeeee!
   
-- name: Say bye again!
-  stage: Test
+- name: Job allow failure
+  stage: Allow failure
   image: alpine
-  workspace: none
+  allow_failure: true
   script:
-  - sleep 10
-  - echo Byeeeeeeee!
+  - echo Yeahhh
+  - sleep 20
