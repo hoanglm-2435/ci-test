@@ -35,7 +35,9 @@ jobs:
 - name: Job allow failure
   stage: Allow failure
   image: alpine
+  services:
+    - redis:alpine
   allow_failure: true
   script:
   - echo Yeahhh
-  - sleep 20
+  - sleep 10
