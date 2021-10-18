@@ -1,43 +1,13 @@
-default:
-  workspace: shared
-
 stages:
-- Build
-- Test
-- Allow failure
+  - test
 
 jobs:
-- name: Run tests
-  stage: Build
-  image: alpine
-  script:
-  - echo Hello
-
-- name: Sleep
-  stage: Build
-  image: alpine
-  script:
-  - sleep 10
-
-- name: Sleep again
-  stage: Test
-  image: alpine
-  script:
-  - sleep 10
-
-- name: Say bye!
-  stage: Test
-  image: alpine
-  script:
-  - sleep 10
-  - echo Byeeee!
-  
-- name: Job allow failure
-  stage: Allow failure
-  image: alpine
-  services:
-    - redis:alpine
-  allow_failure: true
-  script:
-  - echo Yeahhh
-  - sleep 10
+  - name: test_result
+    stage: test
+    script:
+      - echo ok
+    image: alpine
+    test_result:
+      type: junit
+      path: coverage/junit.xml
+      expires_in: 3 days
