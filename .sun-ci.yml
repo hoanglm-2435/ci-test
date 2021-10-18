@@ -10,4 +10,7 @@ jobs:
     test_result:
       type: junit
       path: coverage/junit.xml
+    artifacts:
+      paths:
+      - coverage
       expires_in: 3 days
