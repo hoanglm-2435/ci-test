@@ -10,7 +10,11 @@ jobs:
     test_result:
       type: junit
       path: coverage/junit.xml
+    coverage:
+      type: clover
+      path: coverage/coverage.xml
     artifacts:
+      name: artifacts
       paths:
       - coverage
       expires_in: 3 days
