@@ -5,7 +5,7 @@ jobs:
   - name: test_result
     stage: test
     script:
-      - echo ok
+      - echo test slack
     image: alpine
     test_result:
       type: junit
