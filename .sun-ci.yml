@@ -6,6 +6,7 @@ jobs:
     stage: test
     script:
       - echo test webhook
+      - echo member hoang-uet
     image: alpine
     test_result:
       type: junit
