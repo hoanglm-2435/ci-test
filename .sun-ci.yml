@@ -5,7 +5,7 @@ jobs:
   - name: test_result
     stage: test
     script:
-      - echo test slack
+      - echo test webhook
     image: alpine
     test_result:
       type: junit
