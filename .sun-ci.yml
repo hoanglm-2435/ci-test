@@ -19,3 +19,9 @@ jobs:
       paths:
       - coverage
       expires_in: 3 days
+    cache:
+    - key:
+        files:
+          - web/yarn.lock
+      paths:
+        - web/node_modules
