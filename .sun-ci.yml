@@ -12,14 +12,13 @@ jobs:
   services:
   - redis:alpine
   script:
-  - echo Hello
-  - composer -v
+  - echo OK
 
 - name: Sleep
   stage: Build
   image: alpine
   script:
-  - composer test
+  - echo OK
   
 - name: Wake up
   stage: Build
@@ -39,7 +38,7 @@ jobs:
   stage: Test
   image: alpine
   script:
-  - echo OK
+  - composer test
 
 - name: Say bye!
   stage: Test
@@ -53,5 +52,4 @@ jobs:
   image: alpine
   workspace: none
   script:
-  - echo Byeeeeeeee!
-  - echo yeahhhhh!
+  - composer test
