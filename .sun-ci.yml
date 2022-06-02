@@ -19,8 +19,8 @@ jobs:
   stage: Build
   image: alpine
   script:
-  - sleep 10
-
+  - composer test
+  
 - name: Wake up
   stage: Build
   image: alpine
@@ -33,13 +33,13 @@ jobs:
   stage: Build
   image: alpine
   script:
-  - composer -v
+  - echo OK
 
 - name: Sleep more
   stage: Test
   image: alpine
   script:
-  - composer -v
+  - echo OK
 
 - name: Say bye!
   stage: Test
