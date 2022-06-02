@@ -33,19 +33,19 @@ jobs:
   stage: Build
   image: alpine
   script:
-  - sleep 10
+  - composer -v
 
 - name: Sleep more
   stage: Test
   image: alpine
   script:
-  - sleep 10
+  - composer -v
 
 - name: Say bye!
   stage: Test
   image: alpine
   script:
-  - sleep 10
+  - composer -v
   - echo Byeeee!
   
 - name: Say bye again!
@@ -53,6 +53,5 @@ jobs:
   image: alpine
   workspace: none
   script:
-  - sleep 10
   - echo Byeeeeeeee!
   - echo yeahhhhh!
