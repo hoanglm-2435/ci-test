@@ -1,27 +1,58 @@
+default:
+  workspace: shared
+
 stages:
-  - test
+- Build
+- Test
 
 jobs:
-  - name: test_result
-    stage: test
-    script:
-      - echo test webhook
-      - echo member hoang-uet
-    image: alpine
-    test_result:
-      type: junit
-      path: coverage/junit.xml
-    coverage:
-      type: clover
-      path: coverage/coverage.xml
-    artifacts:
-      name: artifacts
-      paths:
-      - coverage
-      expires_in: 3 days
-    cache:
-    - key:
-        files:
-          - web/yarn.lock
-      paths:
-        - web/node_modules
+- name: Run tests
+  stage: Build
+  image: alpine
+  services:
+  - redis:alpine
+  script:
+  - echo Hello
+  - composer -v
+
+- name: Sleep
+  stage: Build
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Wake up
+  stage: Build
+  image: alpine
+  workspace: none
+  script:
+  - echo Hello
+  when: manual
+
+- name: Sleep again
+  stage: Build
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Sleep more
+  stage: Test
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Say bye!
+  stage: Test
+  image: alpine
+  script:
+  - sleep 10
+  - echo Byeeee!
+  
+- name: Say bye again!
+  stage: Test
+  image: alpine
+  workspace: none
+  script:
+  - sleep 10
+  - echo Byeeeeeeee!
+  - echo yeahhhhh!
