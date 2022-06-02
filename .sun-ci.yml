@@ -44,7 +44,6 @@ jobs:
   stage: Test
   image: alpine
   script:
-  - composer -v
   - echo Byeeee!
   
 - name: Say bye again!
