@@ -21,7 +21,6 @@ jobs:
 - name: Wake up
   stage: Build
   image: alpine
-  workspace: none
   script:
   - echo Hello
   
@@ -30,12 +29,6 @@ jobs:
   image: alpine
   script:
   - echo OK
-
-- name: Sleep more
-  stage: Test
-  image: alpine
-  script:
-  - sleep 5
 
 - name: Say bye!
   stage: Test
@@ -46,6 +39,5 @@ jobs:
 - name: Say bye again!
   stage: Test
   image: alpine
-  workspace: none
   script:
   - sleep 10
