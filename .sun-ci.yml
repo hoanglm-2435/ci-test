@@ -14,5 +14,3 @@ jobs:
   only:
     branches:
     - main
-    events:
-    - pull_request
