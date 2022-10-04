@@ -11,35 +11,8 @@ jobs:
   image: alpine
   script:
   - echo OK
-
-- name: Sleep
-  stage: Build
-  workspace: none 
-  image: alpine
-  script:
-  - echo OK
-  
-- name: Wake up
-  stage: Build
-  image: alpine
-  script:
-  - echo Hello
-  
-- name: Sleep again
-  stage: Build
-  image: alpine
-  script:
-  - echo OK
-
-- name: Say bye!
-  stage: Test
-  workspace: none
-  image: alpine
-  script:
-  - echo Byeeee!
-  
-- name: Say bye again!
-  stage: Test
-  image: alpine
-  script:
-  - sleep 10
+  only:
+    branches:
+    - test-only
+    events:
+    - pull_request
