@@ -11,8 +11,13 @@ jobs:
   image: alpine
   script:
   - echo OK
-  only:
+- name: Run tests other
+  stage: Build
+  image: alpine
+  script:
+  - echo OK
+  except:
     branches:
-    - main
+      - main
     events:
-    - push
+      - push
