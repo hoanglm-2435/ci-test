@@ -10,7 +10,8 @@ jobs:
   stage: Build
   image: alpine
   script:
-  - echo OK
+  - echo OKK
+  - sleep 60
 - name: Run tests other
   stage: Build
   image: alpine
