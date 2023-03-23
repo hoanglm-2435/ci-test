@@ -12,6 +12,7 @@ jobs:
   script:
   - echo OK
   - sleep 60
+  - echo Done
 - name: Run tests other
   stage: Build
   image: alpine
