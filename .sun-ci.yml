@@ -1,8 +1,5 @@
 default:
   workspace: shared
-  only:
-    events:
-      - pull_request
 
 stages:
 - Build
@@ -14,8 +11,14 @@ jobs:
   image: alpine
   script:
   - echo OK
+  only:
+    events:
+      - pull_request
 - name: Run tests other
   stage: Build
   image: alpine
   script:
   - echo OK
+  only:
+    events:
+      - pull_request
