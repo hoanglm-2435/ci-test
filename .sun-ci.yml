@@ -19,8 +19,3 @@ jobs:
   image: alpine
   script:
   - echo OK
-  except:
-    branches:
-      - main
-    events:
-      - push
