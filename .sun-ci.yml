@@ -14,10 +14,10 @@ jobs:
   stage: Build
   image: alpine
   script:
-  - echo OK
+  - echo OKK
 
 - name: Run tests other
   stage: Build
   image: alpine
   script:
-  - echo OK
+  - echo OKK
