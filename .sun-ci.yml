@@ -1,5 +1,8 @@
 default:
   workspace: shared
+  only:
+    events:
+      - pull_request
 
 stages:
 - Build
